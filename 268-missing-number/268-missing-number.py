@@ -4,7 +4,6 @@ class Solution:
         ans = [False] *(len(nums) + 1)
         for num in nums:
             ans[num] = True
-        print(ans)
         for res in range(len(ans)):
             if ans[res] == False:
                 return res
