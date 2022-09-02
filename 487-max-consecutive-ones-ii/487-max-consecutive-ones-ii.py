@@ -15,4 +15,4 @@ class Solution:
                 i += 1
             maxCount = max(maxCount, j - i + 1)
             j += 1
-        return max(maxCount, j - i)
+        return maxCount
