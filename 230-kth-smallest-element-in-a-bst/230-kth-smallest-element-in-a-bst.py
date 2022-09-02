@@ -13,9 +13,7 @@ class Solution:
         if node is None:
             return None
         
-        if node.left:
-            self.inOrder(node.left, stack)
+        self.inOrder(node.left, stack)
         stack.append(node.val)
-        if node.right:
-            self.inOrder(node.right, stack)
+        self.inOrder(node.right, stack)
         
