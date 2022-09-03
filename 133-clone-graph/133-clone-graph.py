@@ -11,11 +11,12 @@ class Solution:
         self.visited = {}
     def cloneGraph(self, node: 'Node') -> 'Node':
         
-        if node in self.visited:
-            return self.visited[node]
-        
         if node is None:
             return
+        
+        if node in self.visited:
+            return self.visited[node]
+
         new_node = Node(node.val)
         self.visited[node] = new_node
         
