@@ -19,7 +19,8 @@ class Solution:
         visited[currCourse] = True
         for nextCourse in courseDict[currCourse]:
             if not visited[nextCourse]:
-                self.checkLoop(nextCourse, courseDict, visited, loopCheck)
+                if self.checkLoop(nextCourse, courseDict, visited, loopCheck):
+                    return True
             if loopCheck[nextCourse]:
                 return True
         loopCheck[currCourse] = False
