@@ -16,6 +16,5 @@ class Solution:
                 indegree[nextCourse] -= 1
                 if indegree[nextCourse] == 0:
                     indegree_zero.append(nextCourse)
-                    del indegree[nextCourse]
             
-        return [] if indegree else ans
+        return ans if len(ans) == numCourses else []
