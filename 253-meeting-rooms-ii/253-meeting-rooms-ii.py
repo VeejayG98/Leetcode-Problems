@@ -3,9 +3,6 @@ class Solution:
         intervals = sorted(intervals, key = lambda x: x[0])
         rooms = []
         for interval in intervals:
-            # if not rooms:
-            #     rooms.append(interval)
-            # else:
             intervalAdded = False
             for i in range(len(rooms)):
                 if rooms[i][1] <= interval[0]:
