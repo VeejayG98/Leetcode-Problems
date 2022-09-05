@@ -6,10 +6,8 @@ class Solution:
         return ans
     
     def hammingWeight(self, num):
-        mask = 1
         count = 0
-        for i in range(32):
-            if num & mask != 0:
-                count += 1
-            mask <<= 1
+        while num != 0:
+            num = num & (num - 1) 
+            count += 1
         return count
