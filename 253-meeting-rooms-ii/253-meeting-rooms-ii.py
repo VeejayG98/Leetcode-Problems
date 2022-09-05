@@ -3,12 +3,9 @@ class Solution:
         intervals = sorted(intervals, key = lambda x: x[0])
         rooms = []
         for interval in intervals:
-            intervalAdded = False
-            for i in range(len(rooms)):
-                if rooms[i][1] <= interval[0]:
-                    rooms[i] = interval
-                    intervalAdded = True
-                    break
-            if not rooms or intervalAdded == False:
-                rooms.append(interval)
+            if not rooms or rooms[0] > interval[0]:
+                heapq.heappush(rooms, interval[1])
+            else:
+                heapq.heappop(rooms)
+                heapq.heappush(rooms, interval[1])
         return len(rooms)
