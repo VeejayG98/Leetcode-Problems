@@ -22,11 +22,6 @@ class Solution:
                 i, j = queue.pop(0)
                 if grid[i][j] == 2:
                     grid[i][j] = 0
-                    # for d in directions:
-                    #     if i + d[0] >= 0 and i + d[0] < len(grid) and j + d[1] >=0 and j + d[1] < len(grid[0]) and grid[i + d[0]][j + d[1]] == 1:
-                    #         grid[i + d[0]][j + d[1]] = 2
-                    #         queue.append((i + d[0], j + d[1]))
-                    #         fresh_oranges -= 1
                             
                     if i - 1 >= 0 and grid[i - 1][j] == 1:
                         grid[i - 1][j] = 2
