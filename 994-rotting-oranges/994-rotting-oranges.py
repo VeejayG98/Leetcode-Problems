@@ -16,12 +16,11 @@ class Solution:
                     
         if fresh_oranges == 0:
             return 0
+        
         while queue:
             length = len(queue)
             for k in range(length):
                 i, j = queue.pop(0)
-                # if grid[i][j] == 2:
-                #     grid[i][j] = 0
                             
                 if i - 1 >= 0 and grid[i - 1][j] == 1:
                     grid[i - 1][j] = 2
