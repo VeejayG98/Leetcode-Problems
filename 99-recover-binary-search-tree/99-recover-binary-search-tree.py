@@ -11,9 +11,7 @@ class Solution:
         """
         stack = []
         self.inOrder(root, stack)
-        # print([n.val for n in stack])
         node1, node2 = self.findSwap(stack)
-        # print(node1.val,node2.val)
         node1.val, node2.val = node2.val, node1.val
     
     def findSwap(self, stack):
