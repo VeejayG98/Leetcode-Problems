@@ -17,7 +17,6 @@ class Solution:
             
             while freq[s[j]] > 1:
                 maxLength = max(maxLength, j - i)
-                # print(maxLength, i, j)
                 freq[s[i]] -= 1
                 i += 1
             j += 1
