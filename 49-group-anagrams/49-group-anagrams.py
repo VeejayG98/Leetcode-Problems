@@ -7,4 +7,4 @@ class Solution:
             key = tuple(sorted(word))
             word_dict[key].append(word)
         
-        return [collection for collection in word_dict.values()]
+        return word_dict.values()
