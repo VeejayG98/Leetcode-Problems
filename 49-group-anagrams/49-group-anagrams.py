@@ -7,5 +7,4 @@ class Solution:
             for letter in word:
                 alphabets[ord(letter) - ord('a')] += 1
             word_dict[tuple(alphabets)].append(word)
-        
         return word_dict.values()
