@@ -8,7 +8,7 @@ class Solution:
         while j < len(s):
             freq[s[j]] = freq.get(s[j], 0) + 1
             maxFreq = max(maxFreq, freq[s[j]])
-            if (j - i + 1) - maxFreq > k:
+            while (j - i + 1) - maxFreq > k:
                 freq[s[i]] -= 1
                 i += 1
             maxLength = max(maxLength, j - i + 1)
