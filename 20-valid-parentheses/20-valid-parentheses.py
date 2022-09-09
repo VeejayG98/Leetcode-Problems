@@ -5,7 +5,7 @@ class Solution:
                       '}' : '{',
                       ']': '['}
         for symbol in s:
-            if symbol == '(' or symbol == '{' or symbol == '[':
+            if symbol in symbol_dict.values():
                 stack.append(symbol)
             elif not stack or stack.pop() != symbol_dict[symbol]:
                 return False
