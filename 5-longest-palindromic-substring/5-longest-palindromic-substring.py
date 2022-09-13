@@ -8,7 +8,6 @@ class Solution:
         
         for i in reversed(range(len(s))):
             for j in range(i, len(s)):
-                # print(i, j)
                 if i == j:
                     dp[i][j] = True
                 elif s[i] == s[j]:
