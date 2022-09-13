@@ -3,10 +3,10 @@ class Solution:
         dp = [[False] * len(s) for _ in range(len(s))]
         ans = ""
         
-        if len(s) == 1:
+        if s == s[:: -1]:
             return s
         
-        for i in reversed(range(len(s) - 1)):
+        for i in reversed(range(-1, len(s) - 1)):
             for j in range(i, len(s)):
                 # print(i, j)
                 if i == j:
