@@ -6,8 +6,9 @@ class Solution:
         if s == s[:: -1]:
             return s
         
-        for i in reversed(range(len(s) - 1)):
+        for i in reversed(range(len(s))):
             for j in range(i, len(s)):
+                # print(i, j)
                 if i == j:
                     dp[i][j] = True
                 elif s[i] == s[j]:
