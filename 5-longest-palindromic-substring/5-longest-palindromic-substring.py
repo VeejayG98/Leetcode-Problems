@@ -6,7 +6,7 @@ class Solution:
         if s == s[:: -1]:
             return s
         
-        for i in reversed(range(-1, len(s) - 1)):
+        for i in reversed(range(len(s) - 1)):
             for j in range(i, len(s)):
                 if i == j:
                     dp[i][j] = True
