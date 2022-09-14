@@ -1,22 +1,19 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        dp = [[False] * len(s) for _ in range(len(s))]
-        ans = ""
-        
-        if s == s[:: -1]:
-            return s
-        
-        for i in reversed(range(len(s))):
-            for j in range(i, len(s)):
-                if i == j:
-                    dp[i][j] = True
-                elif s[i] == s[j]:
-                    if j - i == 1:
-                        dp[i][j] = True
-                    else:
-                        dp[i][j] = dp[i + 1][j - 1]
+        max_length = ""
+        if len(s) == 0:
+            return ""
+        for i in range(len(s)):
+            odd_length = self.expandAroundCenter(s, i, i)
+            even_length = self.expandAroundCenter(s, i, i + 1)
+            max_length = max(odd_length, even_length, max_length, key = len)
             
-                if dp[i][j]:
-                    ans = max(ans, s[i: j + 1], key = len)
+        return max_length
         
-        return ans
+    def expandAroundCenter(self, s, start, end):
+        while start >= 0 and end < len(s) and s[start] == s[end]:
+            start -= 1
+            end += 1
+        return s[start + 1: end]
+    
+    
