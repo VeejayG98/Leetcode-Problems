@@ -1,18 +1,16 @@
 class Solution:
     def countSubstrings(self, s: str) -> int:
-        dp = [[False] * len(s) for _ in range(len(s))]
+        ans = []
         count = 0
-        
-        for i in reversed(range(len(s))):
-            for j in range(i, len(s)):
-                if i == j:
-                    dp[i][j] = True
-                elif s[i] == s[j]:
-                    if j - i == 1:
-                        dp[i][j] = True
-                    else:
-                        dp[i][j] = dp[i + 1][j - 1]
-                
-                if dp[i][j]:
-                    count += 1
+        for i in range(len(s)):
+            count += self.expandAroundCenter(s, i, i)
+            count += self.expandAroundCenter(s, i, i + 1)
+        return count
+    
+    def expandAroundCenter(self, s, start, end):
+        count = 0
+        while start >= 0 and end < len(s) and s[start] == s[end]:
+            count += 1
+            start -= 1
+            end += 1
         return count
