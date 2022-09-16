@@ -15,7 +15,6 @@ class Solution:
                 break
             dp[0][j] = 1
         
-        # print(dp)
         for i in range(1, m):
             for j in range(1, n):
                 if obstacleGrid[i][j] != 1:
