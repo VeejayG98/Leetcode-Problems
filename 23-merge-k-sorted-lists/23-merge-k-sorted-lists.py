@@ -11,16 +11,13 @@ class Solution:
         for llist in lists:
             node = llist
             while node:
-                # print(node.val, node)
                 heap.append((node.val, i, node))
                 node = node.next
                 i += 1
-        # print(heap)
         heapq.heapify(heap)
         if not heap:
             return None
         head = heapq.heappop(heap)[-1]
-        # print(head)
         node = head
         while heap:
             node.next = heapq.heappop(heap)[-1]
