@@ -14,6 +14,7 @@ class Solution:
             
             if letter not in freq or freq[letter] == 0:
                 key_s2[ord(s2[i]) - ord('a')] -= 1
+                # freq[s2[i]] = freq.get(s2[i], -1) + 1
                 i += 1
             else:
                 freq[letter] -= 1
