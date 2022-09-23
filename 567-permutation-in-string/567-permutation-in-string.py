@@ -22,8 +22,3 @@ class Solution:
                 return True
             j += 1
         return False
-    # def getKey(self, s):
-    #     key = [0] * 26
-    #     for letter in s:
-    #         key[ord(letter) - ord('a')] += 1
-    #     return key
