@@ -11,8 +11,8 @@ class Solution:
                 operand1 = int(stack.pop())
                 result = self.performOperation(operand1, operand2, operations[token])
                 stack.append(result)
-                continue
-            stack.append(token)
+            else:
+                stack.append(token)
         return stack.pop()
             
     def performOperation(self, operand1, operand2, function):
