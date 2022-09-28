@@ -14,14 +14,6 @@ class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
         copy_head = self.cloneNodes(head)
         self.assignRandom(copy_head, head)
-        # node = copy_head
-        # while node:
-        #     print(node.val)
-        #     if node.random:
-        #         print("Random:", node.random.val)
-        #     else:
-        #         print("Random: None")
-        #     node = node.next
         return copy_head
         
     def cloneNodes(self, node):
